@@ -1,0 +1,5 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|71a39943-270c-4551-b6df-01f0346beb59
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|7387ae72-d106-4acf-97d4-18289aa1a8f8
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|4d91b369-a79a-4d85-af0c-a223bebf4ce9
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|f0b3b3cc-ce0c-4a3d-9d52-5d4c78b7f495
+C:\Users\edtriccorp\Documents\PSoC Creator\LIDAR\LIDAR.cydsn\LIDAR.cyprj|3b6cd60e-1d8e-40c1-9767-22a19b3339a5
