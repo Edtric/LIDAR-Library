@@ -1,0 +1,838 @@
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.main,"ax",%progbits
+  18              		.align	2
+  19              		.global	main
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	main, %function
+  23              	main:
+  24              	.LFB33:
+  25              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include "LIDAR_Lite.h"
+  13:.\main.c      **** 
+  14:.\main.c      **** int main()
+  15:.\main.c      **** {
+  26              		.loc 1 15 0
+  27              		.cfi_startproc
+  28 0000 10B5     		push	{r4, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 4, -8
+  31              		.cfi_offset 14, -4
+  16:.\main.c      ****     CyGlobalIntEnable;
+  32              		.loc 1 16 0
+  33              	@ 16 ".\main.c" 1
+  34 0002 62B6     		CPSIE   i
+  35              	@ 0 "" 2
+  17:.\main.c      **** 
+  18:.\main.c      ****     UART_Start();
+  36              		.loc 1 18 0
+  37              		.code	16
+  38 0004 FFF7FEFF 		bl	UART_Start
+  39              	.LVL0:
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 2
+
+
+  19:.\main.c      ****     I2C_Start();
+  40              		.loc 1 19 0
+  41 0008 FFF7FEFF 		bl	I2C_Start
+  42              	.LVL1:
+  20:.\main.c      ****     
+  21:.\main.c      ****     CyDelay(100);
+  43              		.loc 1 21 0
+  44 000c 6420     		mov	r0, #100
+  45 000e FFF7FEFF 		bl	CyDelay
+  46              	.LVL2:
+  47              	.L2:
+  22:.\main.c      **** 
+  23:.\main.c      ****     for(;;)
+  24:.\main.c      ****     {
+  25:.\main.c      ****         sprintf( distance , "%d" , getDistance() );
+  48              		.loc 1 25 0 discriminator 1
+  49 0012 FFF7FEFF 		bl	getDistance
+  50              	.LVL3:
+  51 0016 021C     		mov	r2, r0
+  52 0018 054C     		ldr	r4, .L3
+  53 001a 201C     		mov	r0, r4
+  54 001c 0549     		ldr	r1, .L3+4
+  55 001e FFF7FEFF 		bl	sprintf
+  56              	.LVL4:
+  26:.\main.c      ****         UART_UartPutString( distance );
+  57              		.loc 1 26 0 discriminator 1
+  58 0022 201C     		mov	r0, r4
+  59 0024 FFF7FEFF 		bl	UART_UartPutString
+  60              	.LVL5:
+  27:.\main.c      ****         UART_UartPutString( "\r\n" );
+  61              		.loc 1 27 0 discriminator 1
+  62 0028 0348     		ldr	r0, .L3+8
+  63 002a FFF7FEFF 		bl	UART_UartPutString
+  64              	.LVL6:
+  28:.\main.c      ****     }
+  65              		.loc 1 28 0 discriminator 1
+  66 002e F0E7     		b	.L2
+  67              	.L4:
+  68              		.align	2
+  69              	.L3:
+  70 0030 00000000 		.word	distance
+  71 0034 00000000 		.word	.LC1
+  72 0038 04000000 		.word	.LC3
+  73              		.cfi_endproc
+  74              	.LFE33:
+  75              		.size	main, .-main
+  76              		.comm	distance,5,4
+  77              		.comm	nackack,1,1
+  78              		.section	.rodata.str1.4,"aMS",%progbits,1
+  79              		.align	2
+  80              	.LC1:
+  81 0000 256400   		.ascii	"%d\000"
+  82 0003 00       		.space	1
+  83              	.LC3:
+  84 0004 0D0A00   		.ascii	"\015\012\000"
+  85 0007 00       		.text
+  86              	.Letext0:
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 3
+
+
+  87              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+  88              		.file 3 ".\\LIDAR_Lite.h"
+  89              		.file 4 "Generated_Source\\PSoC4/UART.h"
+  90              		.file 5 "Generated_Source\\PSoC4/I2C.h"
+  91              		.file 6 "Generated_Source\\PSoC4/CyLib.h"
+  92              		.file 7 "Generated_Source\\PSoC4/UART_SPI_UART.h"
+  93              		.file 8 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+  94              		.section	.debug_info,"",%progbits
+  95              	.Ldebug_info0:
+  96 0000 E2010000 		.4byte	0x1e2
+  97 0004 0400     		.2byte	0x4
+  98 0006 00000000 		.4byte	.Ldebug_abbrev0
+  99 000a 04       		.byte	0x4
+ 100 000b 01       		.uleb128 0x1
+ 101 000c C1000000 		.4byte	.LASF23
+ 102 0010 01       		.byte	0x1
+ 103 0011 7F010000 		.4byte	.LASF24
+ 104 0015 2C000000 		.4byte	.LASF25
+ 105 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 106 001d 00000000 		.4byte	0
+ 107 0021 00000000 		.4byte	.Ldebug_line0
+ 108 0025 02       		.uleb128 0x2
+ 109 0026 01       		.byte	0x1
+ 110 0027 06       		.byte	0x6
+ 111 0028 97010000 		.4byte	.LASF0
+ 112 002c 02       		.uleb128 0x2
+ 113 002d 01       		.byte	0x1
+ 114 002e 08       		.byte	0x8
+ 115 002f 63010000 		.4byte	.LASF1
+ 116 0033 02       		.uleb128 0x2
+ 117 0034 02       		.byte	0x2
+ 118 0035 05       		.byte	0x5
+ 119 0036 BA010000 		.4byte	.LASF2
+ 120 003a 02       		.uleb128 0x2
+ 121 003b 02       		.byte	0x2
+ 122 003c 07       		.byte	0x7
+ 123 003d A8000000 		.4byte	.LASF3
+ 124 0041 02       		.uleb128 0x2
+ 125 0042 04       		.byte	0x4
+ 126 0043 05       		.byte	0x5
+ 127 0044 76010000 		.4byte	.LASF4
+ 128 0048 02       		.uleb128 0x2
+ 129 0049 04       		.byte	0x4
+ 130 004a 07       		.byte	0x7
+ 131 004b 7F000000 		.4byte	.LASF5
+ 132 004f 02       		.uleb128 0x2
+ 133 0050 08       		.byte	0x8
+ 134 0051 05       		.byte	0x5
+ 135 0052 00000000 		.4byte	.LASF6
+ 136 0056 02       		.uleb128 0x2
+ 137 0057 08       		.byte	0x8
+ 138 0058 07       		.byte	0x7
+ 139 0059 91000000 		.4byte	.LASF7
+ 140 005d 03       		.uleb128 0x3
+ 141 005e 04       		.byte	0x4
+ 142 005f 05       		.byte	0x5
+ 143 0060 696E7400 		.ascii	"int\000"
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 4
+
+
+ 144 0064 02       		.uleb128 0x2
+ 145 0065 04       		.byte	0x4
+ 146 0066 07       		.byte	0x7
+ 147 0067 18000000 		.4byte	.LASF8
+ 148 006b 04       		.uleb128 0x4
+ 149 006c 79000000 		.4byte	.LASF9
+ 150 0070 02       		.byte	0x2
+ 151 0071 B3       		.byte	0xb3
+ 152 0072 2C000000 		.4byte	0x2c
+ 153 0076 04       		.uleb128 0x4
+ 154 0077 C4010000 		.4byte	.LASF10
+ 155 007b 02       		.byte	0x2
+ 156 007c B4       		.byte	0xb4
+ 157 007d 3A000000 		.4byte	0x3a
+ 158 0081 04       		.uleb128 0x4
+ 159 0082 25000000 		.4byte	.LASF11
+ 160 0086 02       		.byte	0x2
+ 161 0087 B5       		.byte	0xb5
+ 162 0088 48000000 		.4byte	0x48
+ 163 008c 02       		.uleb128 0x2
+ 164 008d 04       		.byte	0x4
+ 165 008e 04       		.byte	0x4
+ 166 008f B4010000 		.4byte	.LASF12
+ 167 0093 02       		.uleb128 0x2
+ 168 0094 08       		.byte	0x8
+ 169 0095 04       		.byte	0x4
+ 170 0096 88010000 		.4byte	.LASF13
+ 171 009a 04       		.uleb128 0x4
+ 172 009b BB000000 		.4byte	.LASF14
+ 173 009f 02       		.byte	0x2
+ 174 00a0 C4       		.byte	0xc4
+ 175 00a1 A5000000 		.4byte	0xa5
+ 176 00a5 02       		.uleb128 0x2
+ 177 00a6 01       		.byte	0x1
+ 178 00a7 08       		.byte	0x8
+ 179 00a8 71010000 		.4byte	.LASF15
+ 180 00ac 02       		.uleb128 0x2
+ 181 00ad 04       		.byte	0x4
+ 182 00ae 07       		.byte	0x7
+ 183 00af DE010000 		.4byte	.LASF16
+ 184 00b3 05       		.uleb128 0x5
+ 185 00b4 04       		.byte	0x4
+ 186 00b5 A5000000 		.4byte	0xa5
+ 187 00b9 05       		.uleb128 0x5
+ 188 00ba 04       		.byte	0x4
+ 189 00bb BF000000 		.4byte	0xbf
+ 190 00bf 06       		.uleb128 0x6
+ 191 00c0 A5000000 		.4byte	0xa5
+ 192 00c4 07       		.uleb128 0x7
+ 193 00c5 AF010000 		.4byte	.LASF26
+ 194 00c9 01       		.byte	0x1
+ 195 00ca 0E       		.byte	0xe
+ 196 00cb 5D000000 		.4byte	0x5d
+ 197 00cf 00000000 		.4byte	.LFB33
+ 198 00d3 3C000000 		.4byte	.LFE33-.LFB33
+ 199 00d7 01       		.uleb128 0x1
+ 200 00d8 9C       		.byte	0x9c
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 5
+
+
+ 201 00d9 51010000 		.4byte	0x151
+ 202 00dd 08       		.uleb128 0x8
+ 203 00de 08000000 		.4byte	.LVL0
+ 204 00e2 83010000 		.4byte	0x183
+ 205 00e6 08       		.uleb128 0x8
+ 206 00e7 0C000000 		.4byte	.LVL1
+ 207 00eb 8A010000 		.4byte	0x18a
+ 208 00ef 09       		.uleb128 0x9
+ 209 00f0 12000000 		.4byte	.LVL2
+ 210 00f4 91010000 		.4byte	0x191
+ 211 00f8 03010000 		.4byte	0x103
+ 212 00fc 0A       		.uleb128 0xa
+ 213 00fd 01       		.uleb128 0x1
+ 214 00fe 50       		.byte	0x50
+ 215 00ff 02       		.uleb128 0x2
+ 216 0100 08       		.byte	0x8
+ 217 0101 64       		.byte	0x64
+ 218 0102 00       		.byte	0
+ 219 0103 08       		.uleb128 0x8
+ 220 0104 16000000 		.4byte	.LVL3
+ 221 0108 A2010000 		.4byte	0x1a2
+ 222 010c 09       		.uleb128 0x9
+ 223 010d 22000000 		.4byte	.LVL4
+ 224 0111 AD010000 		.4byte	0x1ad
+ 225 0115 29010000 		.4byte	0x129
+ 226 0119 0A       		.uleb128 0xa
+ 227 011a 01       		.uleb128 0x1
+ 228 011b 51       		.byte	0x51
+ 229 011c 05       		.uleb128 0x5
+ 230 011d 03       		.byte	0x3
+ 231 011e 00000000 		.4byte	.LC1
+ 232 0122 0A       		.uleb128 0xa
+ 233 0123 01       		.uleb128 0x1
+ 234 0124 50       		.byte	0x50
+ 235 0125 02       		.uleb128 0x2
+ 236 0126 74       		.byte	0x74
+ 237 0127 00       		.sleb128 0
+ 238 0128 00       		.byte	0
+ 239 0129 09       		.uleb128 0x9
+ 240 012a 28000000 		.4byte	.LVL5
+ 241 012e C8010000 		.4byte	0x1c8
+ 242 0132 3D010000 		.4byte	0x13d
+ 243 0136 0A       		.uleb128 0xa
+ 244 0137 01       		.uleb128 0x1
+ 245 0138 50       		.byte	0x50
+ 246 0139 02       		.uleb128 0x2
+ 247 013a 74       		.byte	0x74
+ 248 013b 00       		.sleb128 0
+ 249 013c 00       		.byte	0
+ 250 013d 0B       		.uleb128 0xb
+ 251 013e 2E000000 		.4byte	.LVL6
+ 252 0142 C8010000 		.4byte	0x1c8
+ 253 0146 0A       		.uleb128 0xa
+ 254 0147 01       		.uleb128 0x1
+ 255 0148 50       		.byte	0x50
+ 256 0149 05       		.uleb128 0x5
+ 257 014a 03       		.byte	0x3
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 6
+
+
+ 258 014b 04000000 		.4byte	.LC3
+ 259 014f 00       		.byte	0
+ 260 0150 00       		.byte	0
+ 261 0151 0C       		.uleb128 0xc
+ 262 0152 8F010000 		.4byte	.LASF17
+ 263 0156 03       		.byte	0x3
+ 264 0157 18       		.byte	0x18
+ 265 0158 6B000000 		.4byte	0x6b
+ 266 015c 05       		.uleb128 0x5
+ 267 015d 03       		.byte	0x3
+ 268 015e 00000000 		.4byte	nackack
+ 269 0162 0D       		.uleb128 0xd
+ 270 0163 A5000000 		.4byte	0xa5
+ 271 0167 72010000 		.4byte	0x172
+ 272 016b 0E       		.uleb128 0xe
+ 273 016c AC000000 		.4byte	0xac
+ 274 0170 04       		.byte	0x4
+ 275 0171 00       		.byte	0
+ 276 0172 0C       		.uleb128 0xc
+ 277 0173 4F010000 		.4byte	.LASF18
+ 278 0177 03       		.byte	0x3
+ 279 0178 19       		.byte	0x19
+ 280 0179 62010000 		.4byte	0x162
+ 281 017d 05       		.uleb128 0x5
+ 282 017e 03       		.byte	0x3
+ 283 017f 00000000 		.4byte	distance
+ 284 0183 0F       		.uleb128 0xf
+ 285 0184 58010000 		.4byte	.LASF19
+ 286 0188 04       		.byte	0x4
+ 287 0189 68       		.byte	0x68
+ 288 018a 0F       		.uleb128 0xf
+ 289 018b 0E000000 		.4byte	.LASF20
+ 290 018f 05       		.byte	0x5
+ 291 0190 68       		.byte	0x68
+ 292 0191 10       		.uleb128 0x10
+ 293 0192 71000000 		.4byte	.LASF21
+ 294 0196 06       		.byte	0x6
+ 295 0197 57       		.byte	0x57
+ 296 0198 A2010000 		.4byte	0x1a2
+ 297 019c 11       		.uleb128 0x11
+ 298 019d 81000000 		.4byte	0x81
+ 299 01a1 00       		.byte	0
+ 300 01a2 12       		.uleb128 0x12
+ 301 01a3 A3010000 		.4byte	.LASF27
+ 302 01a7 03       		.byte	0x3
+ 303 01a8 1A       		.byte	0x1a
+ 304 01a9 76000000 		.4byte	0x76
+ 305 01ad 13       		.uleb128 0x13
+ 306 01ae 69000000 		.4byte	.LASF28
+ 307 01b2 08       		.byte	0x8
+ 308 01b3 DE       		.byte	0xde
+ 309 01b4 5D000000 		.4byte	0x5d
+ 310 01b8 C8010000 		.4byte	0x1c8
+ 311 01bc 11       		.uleb128 0x11
+ 312 01bd B3000000 		.4byte	0xb3
+ 313 01c1 11       		.uleb128 0x11
+ 314 01c2 B9000000 		.4byte	0xb9
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 7
+
+
+ 315 01c6 14       		.uleb128 0x14
+ 316 01c7 00       		.byte	0
+ 317 01c8 15       		.uleb128 0x15
+ 318 01c9 CB010000 		.4byte	.LASF22
+ 319 01cd 07       		.byte	0x7
+ 320 01ce 7701     		.2byte	0x177
+ 321 01d0 DA010000 		.4byte	0x1da
+ 322 01d4 11       		.uleb128 0x11
+ 323 01d5 DA010000 		.4byte	0x1da
+ 324 01d9 00       		.byte	0
+ 325 01da 05       		.uleb128 0x5
+ 326 01db 04       		.byte	0x4
+ 327 01dc E0010000 		.4byte	0x1e0
+ 328 01e0 06       		.uleb128 0x6
+ 329 01e1 9A000000 		.4byte	0x9a
+ 330 01e5 00       		.byte	0
+ 331              		.section	.debug_abbrev,"",%progbits
+ 332              	.Ldebug_abbrev0:
+ 333 0000 01       		.uleb128 0x1
+ 334 0001 11       		.uleb128 0x11
+ 335 0002 01       		.byte	0x1
+ 336 0003 25       		.uleb128 0x25
+ 337 0004 0E       		.uleb128 0xe
+ 338 0005 13       		.uleb128 0x13
+ 339 0006 0B       		.uleb128 0xb
+ 340 0007 03       		.uleb128 0x3
+ 341 0008 0E       		.uleb128 0xe
+ 342 0009 1B       		.uleb128 0x1b
+ 343 000a 0E       		.uleb128 0xe
+ 344 000b 55       		.uleb128 0x55
+ 345 000c 17       		.uleb128 0x17
+ 346 000d 11       		.uleb128 0x11
+ 347 000e 01       		.uleb128 0x1
+ 348 000f 10       		.uleb128 0x10
+ 349 0010 17       		.uleb128 0x17
+ 350 0011 00       		.byte	0
+ 351 0012 00       		.byte	0
+ 352 0013 02       		.uleb128 0x2
+ 353 0014 24       		.uleb128 0x24
+ 354 0015 00       		.byte	0
+ 355 0016 0B       		.uleb128 0xb
+ 356 0017 0B       		.uleb128 0xb
+ 357 0018 3E       		.uleb128 0x3e
+ 358 0019 0B       		.uleb128 0xb
+ 359 001a 03       		.uleb128 0x3
+ 360 001b 0E       		.uleb128 0xe
+ 361 001c 00       		.byte	0
+ 362 001d 00       		.byte	0
+ 363 001e 03       		.uleb128 0x3
+ 364 001f 24       		.uleb128 0x24
+ 365 0020 00       		.byte	0
+ 366 0021 0B       		.uleb128 0xb
+ 367 0022 0B       		.uleb128 0xb
+ 368 0023 3E       		.uleb128 0x3e
+ 369 0024 0B       		.uleb128 0xb
+ 370 0025 03       		.uleb128 0x3
+ 371 0026 08       		.uleb128 0x8
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 8
+
+
+ 372 0027 00       		.byte	0
+ 373 0028 00       		.byte	0
+ 374 0029 04       		.uleb128 0x4
+ 375 002a 16       		.uleb128 0x16
+ 376 002b 00       		.byte	0
+ 377 002c 03       		.uleb128 0x3
+ 378 002d 0E       		.uleb128 0xe
+ 379 002e 3A       		.uleb128 0x3a
+ 380 002f 0B       		.uleb128 0xb
+ 381 0030 3B       		.uleb128 0x3b
+ 382 0031 0B       		.uleb128 0xb
+ 383 0032 49       		.uleb128 0x49
+ 384 0033 13       		.uleb128 0x13
+ 385 0034 00       		.byte	0
+ 386 0035 00       		.byte	0
+ 387 0036 05       		.uleb128 0x5
+ 388 0037 0F       		.uleb128 0xf
+ 389 0038 00       		.byte	0
+ 390 0039 0B       		.uleb128 0xb
+ 391 003a 0B       		.uleb128 0xb
+ 392 003b 49       		.uleb128 0x49
+ 393 003c 13       		.uleb128 0x13
+ 394 003d 00       		.byte	0
+ 395 003e 00       		.byte	0
+ 396 003f 06       		.uleb128 0x6
+ 397 0040 26       		.uleb128 0x26
+ 398 0041 00       		.byte	0
+ 399 0042 49       		.uleb128 0x49
+ 400 0043 13       		.uleb128 0x13
+ 401 0044 00       		.byte	0
+ 402 0045 00       		.byte	0
+ 403 0046 07       		.uleb128 0x7
+ 404 0047 2E       		.uleb128 0x2e
+ 405 0048 01       		.byte	0x1
+ 406 0049 3F       		.uleb128 0x3f
+ 407 004a 19       		.uleb128 0x19
+ 408 004b 03       		.uleb128 0x3
+ 409 004c 0E       		.uleb128 0xe
+ 410 004d 3A       		.uleb128 0x3a
+ 411 004e 0B       		.uleb128 0xb
+ 412 004f 3B       		.uleb128 0x3b
+ 413 0050 0B       		.uleb128 0xb
+ 414 0051 49       		.uleb128 0x49
+ 415 0052 13       		.uleb128 0x13
+ 416 0053 11       		.uleb128 0x11
+ 417 0054 01       		.uleb128 0x1
+ 418 0055 12       		.uleb128 0x12
+ 419 0056 06       		.uleb128 0x6
+ 420 0057 40       		.uleb128 0x40
+ 421 0058 18       		.uleb128 0x18
+ 422 0059 9742     		.uleb128 0x2117
+ 423 005b 19       		.uleb128 0x19
+ 424 005c 01       		.uleb128 0x1
+ 425 005d 13       		.uleb128 0x13
+ 426 005e 00       		.byte	0
+ 427 005f 00       		.byte	0
+ 428 0060 08       		.uleb128 0x8
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 9
+
+
+ 429 0061 898201   		.uleb128 0x4109
+ 430 0064 00       		.byte	0
+ 431 0065 11       		.uleb128 0x11
+ 432 0066 01       		.uleb128 0x1
+ 433 0067 31       		.uleb128 0x31
+ 434 0068 13       		.uleb128 0x13
+ 435 0069 00       		.byte	0
+ 436 006a 00       		.byte	0
+ 437 006b 09       		.uleb128 0x9
+ 438 006c 898201   		.uleb128 0x4109
+ 439 006f 01       		.byte	0x1
+ 440 0070 11       		.uleb128 0x11
+ 441 0071 01       		.uleb128 0x1
+ 442 0072 31       		.uleb128 0x31
+ 443 0073 13       		.uleb128 0x13
+ 444 0074 01       		.uleb128 0x1
+ 445 0075 13       		.uleb128 0x13
+ 446 0076 00       		.byte	0
+ 447 0077 00       		.byte	0
+ 448 0078 0A       		.uleb128 0xa
+ 449 0079 8A8201   		.uleb128 0x410a
+ 450 007c 00       		.byte	0
+ 451 007d 02       		.uleb128 0x2
+ 452 007e 18       		.uleb128 0x18
+ 453 007f 9142     		.uleb128 0x2111
+ 454 0081 18       		.uleb128 0x18
+ 455 0082 00       		.byte	0
+ 456 0083 00       		.byte	0
+ 457 0084 0B       		.uleb128 0xb
+ 458 0085 898201   		.uleb128 0x4109
+ 459 0088 01       		.byte	0x1
+ 460 0089 11       		.uleb128 0x11
+ 461 008a 01       		.uleb128 0x1
+ 462 008b 31       		.uleb128 0x31
+ 463 008c 13       		.uleb128 0x13
+ 464 008d 00       		.byte	0
+ 465 008e 00       		.byte	0
+ 466 008f 0C       		.uleb128 0xc
+ 467 0090 34       		.uleb128 0x34
+ 468 0091 00       		.byte	0
+ 469 0092 03       		.uleb128 0x3
+ 470 0093 0E       		.uleb128 0xe
+ 471 0094 3A       		.uleb128 0x3a
+ 472 0095 0B       		.uleb128 0xb
+ 473 0096 3B       		.uleb128 0x3b
+ 474 0097 0B       		.uleb128 0xb
+ 475 0098 49       		.uleb128 0x49
+ 476 0099 13       		.uleb128 0x13
+ 477 009a 3F       		.uleb128 0x3f
+ 478 009b 19       		.uleb128 0x19
+ 479 009c 02       		.uleb128 0x2
+ 480 009d 18       		.uleb128 0x18
+ 481 009e 00       		.byte	0
+ 482 009f 00       		.byte	0
+ 483 00a0 0D       		.uleb128 0xd
+ 484 00a1 01       		.uleb128 0x1
+ 485 00a2 01       		.byte	0x1
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 10
+
+
+ 486 00a3 49       		.uleb128 0x49
+ 487 00a4 13       		.uleb128 0x13
+ 488 00a5 01       		.uleb128 0x1
+ 489 00a6 13       		.uleb128 0x13
+ 490 00a7 00       		.byte	0
+ 491 00a8 00       		.byte	0
+ 492 00a9 0E       		.uleb128 0xe
+ 493 00aa 21       		.uleb128 0x21
+ 494 00ab 00       		.byte	0
+ 495 00ac 49       		.uleb128 0x49
+ 496 00ad 13       		.uleb128 0x13
+ 497 00ae 2F       		.uleb128 0x2f
+ 498 00af 0B       		.uleb128 0xb
+ 499 00b0 00       		.byte	0
+ 500 00b1 00       		.byte	0
+ 501 00b2 0F       		.uleb128 0xf
+ 502 00b3 2E       		.uleb128 0x2e
+ 503 00b4 00       		.byte	0
+ 504 00b5 3F       		.uleb128 0x3f
+ 505 00b6 19       		.uleb128 0x19
+ 506 00b7 03       		.uleb128 0x3
+ 507 00b8 0E       		.uleb128 0xe
+ 508 00b9 3A       		.uleb128 0x3a
+ 509 00ba 0B       		.uleb128 0xb
+ 510 00bb 3B       		.uleb128 0x3b
+ 511 00bc 0B       		.uleb128 0xb
+ 512 00bd 27       		.uleb128 0x27
+ 513 00be 19       		.uleb128 0x19
+ 514 00bf 3C       		.uleb128 0x3c
+ 515 00c0 19       		.uleb128 0x19
+ 516 00c1 00       		.byte	0
+ 517 00c2 00       		.byte	0
+ 518 00c3 10       		.uleb128 0x10
+ 519 00c4 2E       		.uleb128 0x2e
+ 520 00c5 01       		.byte	0x1
+ 521 00c6 3F       		.uleb128 0x3f
+ 522 00c7 19       		.uleb128 0x19
+ 523 00c8 03       		.uleb128 0x3
+ 524 00c9 0E       		.uleb128 0xe
+ 525 00ca 3A       		.uleb128 0x3a
+ 526 00cb 0B       		.uleb128 0xb
+ 527 00cc 3B       		.uleb128 0x3b
+ 528 00cd 0B       		.uleb128 0xb
+ 529 00ce 27       		.uleb128 0x27
+ 530 00cf 19       		.uleb128 0x19
+ 531 00d0 3C       		.uleb128 0x3c
+ 532 00d1 19       		.uleb128 0x19
+ 533 00d2 01       		.uleb128 0x1
+ 534 00d3 13       		.uleb128 0x13
+ 535 00d4 00       		.byte	0
+ 536 00d5 00       		.byte	0
+ 537 00d6 11       		.uleb128 0x11
+ 538 00d7 05       		.uleb128 0x5
+ 539 00d8 00       		.byte	0
+ 540 00d9 49       		.uleb128 0x49
+ 541 00da 13       		.uleb128 0x13
+ 542 00db 00       		.byte	0
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 11
+
+
+ 543 00dc 00       		.byte	0
+ 544 00dd 12       		.uleb128 0x12
+ 545 00de 2E       		.uleb128 0x2e
+ 546 00df 00       		.byte	0
+ 547 00e0 3F       		.uleb128 0x3f
+ 548 00e1 19       		.uleb128 0x19
+ 549 00e2 03       		.uleb128 0x3
+ 550 00e3 0E       		.uleb128 0xe
+ 551 00e4 3A       		.uleb128 0x3a
+ 552 00e5 0B       		.uleb128 0xb
+ 553 00e6 3B       		.uleb128 0x3b
+ 554 00e7 0B       		.uleb128 0xb
+ 555 00e8 27       		.uleb128 0x27
+ 556 00e9 19       		.uleb128 0x19
+ 557 00ea 49       		.uleb128 0x49
+ 558 00eb 13       		.uleb128 0x13
+ 559 00ec 3C       		.uleb128 0x3c
+ 560 00ed 19       		.uleb128 0x19
+ 561 00ee 00       		.byte	0
+ 562 00ef 00       		.byte	0
+ 563 00f0 13       		.uleb128 0x13
+ 564 00f1 2E       		.uleb128 0x2e
+ 565 00f2 01       		.byte	0x1
+ 566 00f3 3F       		.uleb128 0x3f
+ 567 00f4 19       		.uleb128 0x19
+ 568 00f5 03       		.uleb128 0x3
+ 569 00f6 0E       		.uleb128 0xe
+ 570 00f7 3A       		.uleb128 0x3a
+ 571 00f8 0B       		.uleb128 0xb
+ 572 00f9 3B       		.uleb128 0x3b
+ 573 00fa 0B       		.uleb128 0xb
+ 574 00fb 27       		.uleb128 0x27
+ 575 00fc 19       		.uleb128 0x19
+ 576 00fd 49       		.uleb128 0x49
+ 577 00fe 13       		.uleb128 0x13
+ 578 00ff 3C       		.uleb128 0x3c
+ 579 0100 19       		.uleb128 0x19
+ 580 0101 01       		.uleb128 0x1
+ 581 0102 13       		.uleb128 0x13
+ 582 0103 00       		.byte	0
+ 583 0104 00       		.byte	0
+ 584 0105 14       		.uleb128 0x14
+ 585 0106 18       		.uleb128 0x18
+ 586 0107 00       		.byte	0
+ 587 0108 00       		.byte	0
+ 588 0109 00       		.byte	0
+ 589 010a 15       		.uleb128 0x15
+ 590 010b 2E       		.uleb128 0x2e
+ 591 010c 01       		.byte	0x1
+ 592 010d 3F       		.uleb128 0x3f
+ 593 010e 19       		.uleb128 0x19
+ 594 010f 03       		.uleb128 0x3
+ 595 0110 0E       		.uleb128 0xe
+ 596 0111 3A       		.uleb128 0x3a
+ 597 0112 0B       		.uleb128 0xb
+ 598 0113 3B       		.uleb128 0x3b
+ 599 0114 05       		.uleb128 0x5
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 12
+
+
+ 600 0115 27       		.uleb128 0x27
+ 601 0116 19       		.uleb128 0x19
+ 602 0117 3C       		.uleb128 0x3c
+ 603 0118 19       		.uleb128 0x19
+ 604 0119 01       		.uleb128 0x1
+ 605 011a 13       		.uleb128 0x13
+ 606 011b 00       		.byte	0
+ 607 011c 00       		.byte	0
+ 608 011d 00       		.byte	0
+ 609              		.section	.debug_aranges,"",%progbits
+ 610 0000 1C000000 		.4byte	0x1c
+ 611 0004 0200     		.2byte	0x2
+ 612 0006 00000000 		.4byte	.Ldebug_info0
+ 613 000a 04       		.byte	0x4
+ 614 000b 00       		.byte	0
+ 615 000c 0000     		.2byte	0
+ 616 000e 0000     		.2byte	0
+ 617 0010 00000000 		.4byte	.LFB33
+ 618 0014 3C000000 		.4byte	.LFE33-.LFB33
+ 619 0018 00000000 		.4byte	0
+ 620 001c 00000000 		.4byte	0
+ 621              		.section	.debug_ranges,"",%progbits
+ 622              	.Ldebug_ranges0:
+ 623 0000 00000000 		.4byte	.LFB33
+ 624 0004 3C000000 		.4byte	.LFE33
+ 625 0008 00000000 		.4byte	0
+ 626 000c 00000000 		.4byte	0
+ 627              		.section	.debug_line,"",%progbits
+ 628              	.Ldebug_line0:
+ 629 0000 26010000 		.section	.debug_str,"MS",%progbits,1
+ 629      0200F900 
+ 629      00000201 
+ 629      FB0E0D00 
+ 629      01010101 
+ 630              	.LASF6:
+ 631 0000 6C6F6E67 		.ascii	"long long int\000"
+ 631      206C6F6E 
+ 631      6720696E 
+ 631      7400
+ 632              	.LASF20:
+ 633 000e 4932435F 		.ascii	"I2C_Start\000"
+ 633      53746172 
+ 633      7400
+ 634              	.LASF8:
+ 635 0018 756E7369 		.ascii	"unsigned int\000"
+ 635      676E6564 
+ 635      20696E74 
+ 635      00
+ 636              	.LASF11:
+ 637 0025 75696E74 		.ascii	"uint32\000"
+ 637      333200
+ 638              	.LASF25:
+ 639 002c 433A5C55 		.ascii	"C:\\Users\\edtriccorp\\Documents\\PSoC Creator\\LID"
+ 639      73657273 
+ 639      5C656474 
+ 639      72696363 
+ 639      6F72705C 
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 13
+
+
+ 640 005a 41525C4C 		.ascii	"AR\\LIDAR.cydsn\000"
+ 640      49444152 
+ 640      2E637964 
+ 640      736E00
+ 641              	.LASF28:
+ 642 0069 73707269 		.ascii	"sprintf\000"
+ 642      6E746600 
+ 643              	.LASF21:
+ 644 0071 43794465 		.ascii	"CyDelay\000"
+ 644      6C617900 
+ 645              	.LASF9:
+ 646 0079 75696E74 		.ascii	"uint8\000"
+ 646      3800
+ 647              	.LASF5:
+ 648 007f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 648      20756E73 
+ 648      69676E65 
+ 648      6420696E 
+ 648      7400
+ 649              	.LASF7:
+ 650 0091 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 650      206C6F6E 
+ 650      6720756E 
+ 650      7369676E 
+ 650      65642069 
+ 651              	.LASF3:
+ 652 00a8 73686F72 		.ascii	"short unsigned int\000"
+ 652      7420756E 
+ 652      7369676E 
+ 652      65642069 
+ 652      6E7400
+ 653              	.LASF14:
+ 654 00bb 63686172 		.ascii	"char8\000"
+ 654      3800
+ 655              	.LASF23:
+ 656 00c1 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 656      4320342E 
+ 656      392E3320 
+ 656      32303135 
+ 656      30333033 
+ 657 00f4 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 657      20726576 
+ 657      6973696F 
+ 657      6E203232 
+ 657      31323230 
+ 658 0127 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 658      66756E63 
+ 658      74696F6E 
+ 658      2D736563 
+ 658      74696F6E 
+ 659              	.LASF18:
+ 660 014f 64697374 		.ascii	"distance\000"
+ 660      616E6365 
+ 660      00
+ 661              	.LASF19:
+ 662 0158 55415254 		.ascii	"UART_Start\000"
+ 662      5F537461 
+ARM GAS  C:\Users\EDTRIC~1\AppData\Local\Temp\cc9tOSwa.s 			page 14
+
+
+ 662      727400
+ 663              	.LASF1:
+ 664 0163 756E7369 		.ascii	"unsigned char\000"
+ 664      676E6564 
+ 664      20636861 
+ 664      7200
+ 665              	.LASF15:
+ 666 0171 63686172 		.ascii	"char\000"
+ 666      00
+ 667              	.LASF4:
+ 668 0176 6C6F6E67 		.ascii	"long int\000"
+ 668      20696E74 
+ 668      00
+ 669              	.LASF24:
+ 670 017f 2E5C6D61 		.ascii	".\\main.c\000"
+ 670      696E2E63 
+ 670      00
+ 671              	.LASF13:
+ 672 0188 646F7562 		.ascii	"double\000"
+ 672      6C6500
+ 673              	.LASF17:
+ 674 018f 6E61636B 		.ascii	"nackack\000"
+ 674      61636B00 
+ 675              	.LASF0:
+ 676 0197 7369676E 		.ascii	"signed char\000"
+ 676      65642063 
+ 676      68617200 
+ 677              	.LASF27:
+ 678 01a3 67657444 		.ascii	"getDistance\000"
+ 678      69737461 
+ 678      6E636500 
+ 679              	.LASF26:
+ 680 01af 6D61696E 		.ascii	"main\000"
+ 680      00
+ 681              	.LASF12:
+ 682 01b4 666C6F61 		.ascii	"float\000"
+ 682      7400
+ 683              	.LASF2:
+ 684 01ba 73686F72 		.ascii	"short int\000"
+ 684      7420696E 
+ 684      7400
+ 685              	.LASF10:
+ 686 01c4 75696E74 		.ascii	"uint16\000"
+ 686      313600
+ 687              	.LASF22:
+ 688 01cb 55415254 		.ascii	"UART_UartPutString\000"
+ 688      5F556172 
+ 688      74507574 
+ 688      53747269 
+ 688      6E6700
+ 689              	.LASF16:
+ 690 01de 73697A65 		.ascii	"sizetype\000"
+ 690      74797065 
+ 690      00
+ 691              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

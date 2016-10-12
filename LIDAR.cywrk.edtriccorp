@@ -20,7 +20,9 @@
 <v>LIDAR\LIDAR\TopDesign</v>
 <v>LIDAR\LIDAR\LIDAR.cydwr</v>
 <v>LIDAR\LIDAR\Header Files</v>
+<v>LIDAR\LIDAR\Header Files\LIDAR_Lite.h</v>
 <v>LIDAR\LIDAR\Source Files</v>
+<v>LIDAR\LIDAR\Source Files\LIDAR_Lite.c</v>
 <v>LIDAR\LIDAR\Source Files\main.c</v>
 <v>LIDAR\LIDAR\Generated_Source\PSoC4</v>
 <v>LIDAR\LIDAR\Generated_Source\PSoC4\cy_boot</v>
@@ -96,6 +98,9 @@
 <v>LIDAR\LIDAR\Generated_Source\PSoC4\UART_tx\UART_tx.c</v>
 <v>LIDAR\LIDAR\Generated_Source\PSoC4\UART_tx\UART_tx.h</v>
 <v>LIDAR\LIDAR\Generated_Source\PSoC4\UART_tx\UART_tx_aliases.h</v>
+<v>LIDAR\LIDAR\Generated_Source\PSoC4\cycodeshareexport.ld</v>
+<v>LIDAR\LIDAR\Generated_Source\PSoC4\cycodeshareimport.ld</v>
+<v>LIDAR\LIDAR\Generated_Source\PSoC4\cycodeshareimport.scat</v>
 <v>LIDAR\LIDAR\Generated_Source\PSoC4\cydevice_trm.h</v>
 <v>LIDAR\LIDAR\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
 <v>LIDAR\LIDAR\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
@@ -125,6 +130,44 @@
 <ExpandedNodeIds>
 <v>LIDAR</v>
 <v>LIDAR\LIDAR</v>
+<v>LIDAR\LIDAR\CortexM0</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\Cm0Start.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\CyLFClk.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_BOOT.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_I2C.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_I2C_BOOT.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_I2C_INT.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_I2C_MASTER.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_PM.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_SCB_IRQ.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_SCBCLK.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_scl.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_sda.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\LIDAR_Lite.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\UART.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_BOOT.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_PM.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_SCBCLK.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_SPI_UART.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_SPI_UART_INT.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_tx.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_UART.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_UART_BOOT.lst</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\LIDAR.elf</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\LIDAR.hex</v>
+<v>LIDAR\LIDAR\CortexM0\ARM_GCC_493\Debug\LIDAR.map</v>
 <v>LIDAR\LIDAR\LIDAR.gpdsc</v>
 <v>LIDAR\LIDAR\LIDAR.rpt</v>
 <v>LIDAR\LIDAR\LIDAR_timing.html</v>
@@ -160,6 +203,8 @@
 <name v=".\LIDAR.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\LIDAR.cydsn\LIDAR.cydwr" />
 <name v=".\LIDAR.cydsn\main.c" />
+<name v=".\LIDAR.cydsn\LIDAR_Lite.h" />
+<name v=".\LIDAR.cydsn\LIDAR_Lite.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

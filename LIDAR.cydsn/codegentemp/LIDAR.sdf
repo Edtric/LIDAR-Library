@@ -1,10 +1,10 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2016-02-02T21:55:42Z")
+ (DATE "2016-10-12T01:55:53Z")
  (DESIGN "LIDAR")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
- (VERSION " 3.2")
+ (VERSION " 3.3 CP3")
  (DIVIDER .)
  (TIMESCALE 1 ns)
  (CELL
@@ -13,15 +13,15 @@
   (DELAY
    (ABSOLUTE
     (INTERCONNECT ClockBlock.hfclk \\I2C\:SCB_IRQ\\.clock (0.000:0.000:0.000))
-    (INTERCONNECT \\I2C\:SCB\\.interrupt \\I2C\:SCB_IRQ\\.interrupt (1.000:1.000:1.000))
+    (INTERCONNECT \\I2C\:SCB\\.interrupt \\I2C\:SCB_IRQ\\.interrupt (0.000:0.000:0.000))
     (INTERCONNECT \\I2C\:scl\(0\)\\.fb \\I2C\:SCB\\.scl (0.000:0.000:0.000))
     (INTERCONNECT \\I2C\:sda\(0\)\\.fb \\I2C\:SCB\\.sda (0.000:0.000:0.000))
     (INTERCONNECT ClockBlock.ff_div_2 \\I2C\:SCB\\.clock (0.000:0.000:0.000))
-    (INTERCONNECT \\UART\:SCB\\.tx \\UART\:tx\(0\)\\.pin_input (1.000:1.000:1.000))
+    (INTERCONNECT \\UART\:SCB\\.tx \\UART\:tx\(0\)\\.pin_input (0.000:0.000:0.000))
     (INTERCONNECT ClockBlock.ff_div_3 \\UART\:SCB\\.clock (0.000:0.000:0.000))
     (INTERCONNECT \\UART\:tx\(0\)\\.pad_out \\UART\:tx\(0\)\\.pad_in (0.000:0.000:0.000))
-    (INTERCONNECT \\I2C\:scl\(0\)_PAD\\ \\I2C\:scl\(0\)\\.pad_in (0.000:0.000:0.000))
     (INTERCONNECT \\I2C\:sda\(0\)_PAD\\ \\I2C\:sda\(0\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\I2C\:scl\(0\)_PAD\\ \\I2C\:scl\(0\)\\.pad_in (0.000:0.000:0.000))
     (INTERCONNECT \\UART\:tx\(0\)\\.pad_out \\UART\:tx\(0\)_PAD\\ (0.000:0.000:0.000))
     (INTERCONNECT \\UART\:tx\(0\)_PAD\\ \\UART\:tx\(0\)\\.pad_in (0.000:0.000:0.000))
    )
